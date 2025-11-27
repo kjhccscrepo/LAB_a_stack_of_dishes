@@ -12,18 +12,18 @@ Dish red_dish("A dish with a red fish pattern on it");
 Dish blue_dish("A dish with a blue fish pattern on it");
 
 TEST_CASE(" a stack is initialized with size 0") {
-    REQUIRE(Dish_Stack_test.mySize() == 0);
+    REQUIRE(Dish_Stack_test.size() == 0);
 }
 
 TEST_CASE( "a Dish Stack can have dishes put into it and have its size tracked" ) {
     Dish_Stack_test.push(one_dish);
-    REQUIRE(Dish_Stack_test.mySize() == 1);
+    REQUIRE(Dish_Stack_test.size() == 1);
     Dish_Stack_test.push(two_dish);
-    REQUIRE(Dish_Stack_test.mySize() == 2);
+    REQUIRE(Dish_Stack_test.size() == 2);
     Dish_Stack_test.push(red_dish);
-    REQUIRE(Dish_Stack_test.mySize() == 3);
+    REQUIRE(Dish_Stack_test.size() == 3);
     Dish_Stack_test.push(blue_dish);
-    REQUIRE(Dish_Stack_test.mySize() == 4);
+    REQUIRE(Dish_Stack_test.size() == 4);
 
     // peek works
     Dish peeked_dish = Dish_Stack_test.peek();
@@ -38,46 +38,46 @@ TEST_CASE( "a Dish Stack can have dishes put into it and have its size tracked" 
     REQUIRE(another_popped_dish.get_description() == "A dish with a red fish pattern on it");
 
     // size is tracked
-    REQUIRE(Dish_Stack_test.mySize() == 2);
+    REQUIRE(Dish_Stack_test.size() == 2);
 
     // clear works
     Dish_Stack_test.clear();
-    REQUIRE(Dish_Stack_test.mySize() == 0);
+    REQUIRE(Dish_Stack_test.size() == 0);
 
     // it can then get a new dish
     Dish_Stack_test.push(blue_dish);
-    REQUIRE(Dish_Stack_test.mySize() == 1);
+    REQUIRE(Dish_Stack_test.size() == 1);
 }
 
 TEST_CASE( "a stack can be made with other objects" ) {
     FrogStack<bool> Bool_Stack_test;
-    REQUIRE(Bool_Stack_test.mySize() == 0);
+    REQUIRE(Bool_Stack_test.size() == 0);
     Bool_Stack_test.push(true);
-    REQUIRE(Bool_Stack_test.mySize() == 1);
+    REQUIRE(Bool_Stack_test.size() == 1);
     Bool_Stack_test.push(false);
-    REQUIRE(Bool_Stack_test.mySize() == 2);
+    REQUIRE(Bool_Stack_test.size() == 2);
     Bool_Stack_test.push(true);
-    REQUIRE(Bool_Stack_test.mySize() == 3);
+    REQUIRE(Bool_Stack_test.size() == 3);
     Bool_Stack_test.push(true);
-    REQUIRE(Bool_Stack_test.mySize() == 4);
+    REQUIRE(Bool_Stack_test.size() == 4);
     Bool_Stack_test.push(true);
-    REQUIRE(Bool_Stack_test.mySize() == 5);
+    REQUIRE(Bool_Stack_test.size() == 5);
     Bool_Stack_test.push(false);
-    REQUIRE(Bool_Stack_test.mySize() == 6);
+    REQUIRE(Bool_Stack_test.size() == 6);
 
     // then you can pop the values
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 5);
+    REQUIRE(Bool_Stack_test.size() == 5);
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 4);
+    REQUIRE(Bool_Stack_test.size() == 4);
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 3);
+    REQUIRE(Bool_Stack_test.size() == 3);
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 2);
+    REQUIRE(Bool_Stack_test.size() == 2);
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 1);
+    REQUIRE(Bool_Stack_test.size() == 1);
     Bool_Stack_test.pop();
-    REQUIRE(Bool_Stack_test.mySize() == 0);
+    REQUIRE(Bool_Stack_test.size() == 0);
 
     // CLEAR WORKS
     Bool_Stack_test.push(false);
@@ -85,9 +85,9 @@ TEST_CASE( "a stack can be made with other objects" ) {
     Bool_Stack_test.push(false);
     Bool_Stack_test.push(false);
     Bool_Stack_test.push(false);
-    REQUIRE(Bool_Stack_test.mySize() == 5);
+    REQUIRE(Bool_Stack_test.size() == 5);
 
     Bool_Stack_test.clear();
-    REQUIRE( Bool_Stack_test.mySize() == 0);
+    REQUIRE( Bool_Stack_test.size() == 0);
 
 }

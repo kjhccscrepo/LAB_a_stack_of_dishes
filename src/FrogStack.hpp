@@ -70,7 +70,7 @@ public:
         }
     }
 
-    int mySize() const {
+    int size() const {
         if (is_empty()) return 0;
         return count;
     }
