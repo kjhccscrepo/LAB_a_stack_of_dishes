@@ -1,7 +1,8 @@
 #include <iostream>
-
-#include "src/hello.hpp"
+#include "src/dish.hpp"
+#include "src/FrogStack.hpp"
 
 int main() {
-  std::cout << hello() << std::endl;
+
+    return 0;
 }

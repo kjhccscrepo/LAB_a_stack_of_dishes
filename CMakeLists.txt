@@ -15,7 +15,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(hello_test tests/hello_test.cpp src/hello.cpp)
-add_executable(main main.cpp src/hello.cpp)
+add_executable(FrogStack_test tests/FrogStack_test.cpp src/FrogStack.hpp src/dish.hpp)
+add_executable(main main.cpp src/FrogStack.hpp)
 
-target_link_libraries(hello_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(FrogStack_test PRIVATE Catch2::Catch2WithMain)
